@@ -16,6 +16,10 @@ import sys
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# 设置上传文件夹路径
+MEDIA_URL="/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
 sys.path.insert(0,BASE_DIR)
 sys.path.insert(0,os.path.join(BASE_DIR, 'apps'))
 sys.path.insert(0,os.path.join(BASE_DIR, 'extra_appa'))
@@ -47,7 +51,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'xadmin',
     'crispy_forms',
-    'users'
+    'users',
+    'goods',
+    'trade',
+    'user_operation',
+    'rest_framework',
+    'DjangoUeditor'
 ]
 
 MIDDLEWARE = [
@@ -96,7 +105,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mxshop',        #数据库名字
         'USER': 'root',          #账号
-        'PASSWORD': '123456',    #密码
+        'PASSWORD': 'Password1',    #密码
         'HOST': '127.0.0.1',     #IP
         'PORT': '3306',          #端口
         "OPTIONS":{"init_command":"SET default_storage_engine=INNODB;"}
